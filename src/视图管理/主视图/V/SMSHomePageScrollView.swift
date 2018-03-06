@@ -9,13 +9,24 @@
 import UIKit
 
 class SMSHomePageScrollView: UICollectionView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    var pageController : UIPageControl?
+    var model : SMSHomePageScrollModel?
+    var timer : Timer?
+    
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
+        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
+        self.contentSize = CGSize.init(width: self.bounds.width, height: self.bounds.height)
+        self.contentOffset = CGPoint.init(x:self.bounds.width, y:0)
+        self.isPagingEnabled = true
+        
+        
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
 }
